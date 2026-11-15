@@ -215,7 +215,7 @@ export function Header() {
             </button>
             <Link
               href="/account"
-              aria-label="Your account"
+              aria-label="Sign in or view your account"
               className="hidden size-10 items-center justify-center rounded-full transition hover:bg-ink hover:text-lime sm:flex"
             >
               <UserIcon size={19} />
