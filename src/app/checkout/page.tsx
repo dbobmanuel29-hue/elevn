@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, type FormEvent } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState, type FormEvent } from "react";
 
 import { ArrowRightIcon, CheckIcon, ShieldIcon, TruckIcon } from "@/components/icons";
 import { useStore } from "@/components/store-provider";
@@ -11,6 +12,7 @@ import { formatNaira, SHIPPING_FLAT_RATE, SHIPPING_THRESHOLD } from "@/lib/forma
 type PaymentMethod = "card" | "transfer";
 
 export default function CheckoutPage() {
+  const router = useRouter();
   const { cart, cartSubtotal, cartCount, hydrated, clearCart } = useStore();
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("card");
   const [customer, setCustomer] = useState({
@@ -25,6 +27,12 @@ export default function CheckoutPage() {
 
   const shipping = cart.length === 0 || cartSubtotal >= SHIPPING_THRESHOLD ? 0 : SHIPPING_FLAT_RATE;
   const total = cartSubtotal + shipping;
+
+  useEffect(() => {
+    if (!completed) return;
+    const redirect = window.setTimeout(() => router.replace("/"), 4000);
+    return () => window.clearTimeout(redirect);
+  }, [completed, router]);
 
   function updateCustomer(field: keyof typeof customer, value: string) {
     setCustomer((current) => ({ ...current, [field]: value }));
@@ -80,7 +88,7 @@ export default function CheckoutPage() {
               Return to homepage <ArrowRightIcon size={15} />
             </Link>
             <p className="mt-3 text-[10px] text-ink/45">
-              Your shopping bag has been cleared.
+              Your shopping bag has been cleared. Returning to the homepage shortly.
             </p>
           </div>
         </div>
