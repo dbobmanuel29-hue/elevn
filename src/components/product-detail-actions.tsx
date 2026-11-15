@@ -71,8 +71,7 @@ export function ProductDetailActions({ product }: { product: Product }) {
         <button
           type="button"
           onClick={() => {
-            addToCart(product, { qty, size });
-            setCartOpen(true);
+            if (addToCart(product, { qty, size })) setCartOpen(true);
           }}
           className="btn btn-ink flex-1"
         >
@@ -95,8 +94,7 @@ export function ProductDetailActions({ product }: { product: Product }) {
       <button
         type="button"
         onClick={() => {
-          addToCart(product, { qty, size });
-          router.push("/cart");
+          if (addToCart(product, { qty, size })) router.push("/cart");
         }}
         className="btn btn-outline mt-2.5 h-12 w-full"
       >
