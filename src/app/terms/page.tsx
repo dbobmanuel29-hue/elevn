@@ -11,7 +11,7 @@ const SECTIONS = [
   {
     title: "1. Demo storefront notice",
     body: [
-      "This website is a demonstration fashion storefront. Product browsing, search, the shopping bag and the wishlist are fully functional and stored in your browser. Checkout, payment processing and order fulfilment are not connected — no payment is collected and no order is created.",
+      "This website is a demonstration fashion storefront. Product browsing, search, the shopping bag and the wishlist are interactive and stored in your browser. Checkout includes simulated card and bank transfer confirmation flows, but no real payment is collected, no payment provider is contacted and no live order is created or fulfilled.",
     ],
   },
   {
