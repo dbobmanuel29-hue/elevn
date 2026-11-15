@@ -42,17 +42,35 @@ export function Header() {
   const progressRef = useRef<HTMLSpanElement | null>(null);
 
   useEffect(() => {
-    const onScroll = () => {
+    let frame = 0;
+    let previousScrolled = false;
+
+    const updateOnFrame = () => {
+      frame = 0;
       const y = window.scrollY;
-      setScrolled(y > 12);
+      const nextScrolled = y > 12;
+      if (nextScrolled !== previousScrolled) {
+        previousScrolled = nextScrolled;
+        setScrolled(nextScrolled);
+      }
+
       const max = document.documentElement.scrollHeight - window.innerHeight;
       if (progressRef.current) {
         progressRef.current.style.transform = `scaleX(${max > 0 ? Math.min(1, y / max) : 0})`;
       }
     };
-    onScroll();
+
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(updateOnFrame);
+    };
+
+    updateOnFrame();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   useEffect(() => {
