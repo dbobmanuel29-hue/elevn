@@ -192,6 +192,58 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      <section className="bg-lime py-12 md:py-16" aria-labelledby="message-guide-heading">
+        <div className="shell">
+          <Reveal className="max-w-xl">
+            <p className="eyebrow text-ink/55">A little detail goes a long way</p>
+            <h2 id="message-guide-heading" className="display mt-2 text-[clamp(2rem,4.6vw,3.4rem)]">
+              Help us help you faster.
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-ink/60">
+              When you contact the studio, a few useful details can help us understand what you need
+              and give you a clearer answer.
+            </p>
+          </Reveal>
+          <div className="mt-7 grid gap-3 md:grid-cols-3">
+            {[
+              { number: "01", title: "For an order", copy: "Include your order reference and the email or phone number used at checkout." },
+              { number: "02", title: "For sizing", copy: "Tell us the item you are considering, your usual size and the fit you prefer." },
+              { number: "03", title: "For other enquiries", copy: "Choose a clear subject and share the key details, links or dates relevant to your request." },
+            ].map((item, index) => (
+              <Reveal key={item.number} delay={index * 60}>
+                <article className="h-full rounded-xl border border-ink/20 bg-paper p-5">
+                  <p className="display text-3xl text-pink">{item.number}</p>
+                  <h3 className="mt-3 text-[11px] font-bold tracking-[0.12em] uppercase">{item.title}</h3>
+                  <p className="mt-2 text-[12px] leading-relaxed text-ink/60">{item.copy}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-paper py-12 md:py-16" aria-labelledby="studio-heading">
+        <div className="shell grid gap-7 lg:grid-cols-[1fr_1fr] lg:items-center">
+          <div className="relative aspect-[5/4] overflow-hidden rounded-2xl bg-ink">
+            <Image src={ABOUT_IMAGE} alt="ELEVN studio campaign image" fill unoptimized sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+          </div>
+          <Reveal>
+            <p className="eyebrow text-ink/50">The studio is listening</p>
+            <h2 id="studio-heading" className="display mt-2 text-[clamp(2rem,4.6vw,3.4rem)]">
+              Start a conversation.
+            </h2>
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-ink/60">
+              Prefer a direct route? Reach the team by email for detailed enquiries or call for a
+              quick question during studio hours.
+            </p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+              <a href="mailto:hello@elevn.studio" className="btn btn-ink">Email the studio <ArrowUpRightIcon size={14} /></a>
+              <a href="tel:+2348012345678" className="btn btn-outline">Call the studio</a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
     </>
   );
 }
