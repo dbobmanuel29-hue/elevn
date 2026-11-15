@@ -77,7 +77,7 @@ export default function AccountPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-pink" />
-                  Demo card and bank transfer checkout: interactive. Real payment processing, order storage, fulfilment and member login: not connected yet.
+                  Demo card and bank transfer checkout, delivery selection and browser-based order tracking: interactive. Real payment processing, central order storage, courier updates, fulfilment and member login: not connected yet.
                 </li>
               </ul>
             </div>
