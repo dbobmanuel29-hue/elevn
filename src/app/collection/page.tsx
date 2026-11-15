@@ -293,6 +293,58 @@ export default function CollectionPage() {
         </div>
       </section>
 
+      <section className="bg-paper py-12 md:py-16" aria-labelledby="category-edit-heading">
+        <div className="shell">
+          <Reveal className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+            <div>
+              <p className="eyebrow text-ink/50">Find your direction</p>
+              <h2 id="category-edit-heading" className="display mt-2 text-[clamp(2rem,4.6vw,3.4rem)]">
+                Four ways into the wardrobe.
+              </h2>
+            </div>
+            <p className="max-w-sm text-xs leading-relaxed text-ink/55 sm:text-right">
+              Start with the category that feels most like you, then build a look across the collection.
+            </p>
+          </Reveal>
+          <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {categories.map((category, index) => (
+              <Reveal key={category.slug} delay={index * 55}>
+                <Link href={`/shop?category=${category.slug}`} className="group block">
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-ink">
+                    <Image src={category.image} alt={category.name} fill unoptimized sizes="(max-width: 640px) 48vw, 24vw" className="object-cover transition duration-700 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent" />
+                    <p className="display absolute inset-x-0 bottom-0 p-4 text-2xl text-white">{category.name}</p>
+                  </div>
+                  <span className="mt-2 inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.16em] uppercase">
+                    Explore category <ArrowUpRightIcon size={13} className="text-pink" />
+                  </span>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-pink py-12 md:py-16" aria-labelledby="styling-heading">
+        <div className="shell grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
+          <div className="relative aspect-[5/4] overflow-hidden rounded-2xl border-2 border-ink">
+            <Image src={HERO_IMAGE} alt="ELEVN collection styling inspiration" fill unoptimized sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+          </div>
+          <Reveal>
+            <p className="eyebrow text-ink/65">The art of getting dressed</p>
+            <h2 id="styling-heading" className="display mt-2 text-[clamp(2rem,4.6vw,3.4rem)]">
+              Make the pieces your own.
+            </h2>
+            <p className="mt-3 max-w-lg text-sm leading-relaxed text-ink/70">
+              Start with one piece you love. Keep the foundation simple, bring in a contrasting
+              texture, and finish with a detail that feels personal. There is no single way to wear
+              the collection.
+            </p>
+            <Link href="/shop" className="btn btn-ink mt-5">Build your look <ArrowRightIcon size={15} /></Link>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="bg-lime pb-14">
         <div className="shell">
           <div className="flex flex-col items-center gap-4 rounded-2xl border-2 border-ink bg-paper px-6 py-10 text-center">
