@@ -212,6 +212,61 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="bg-ink py-12 text-white md:py-16" aria-labelledby="point-of-view-heading">
+        <div className="shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <Reveal>
+            <p className="eyebrow text-lime">The ELEVN point of view</p>
+            <h2 id="point-of-view-heading" className="display mt-2 text-[clamp(2rem,4.6vw,3.4rem)]">
+              Less noise. More intention.
+            </h2>
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-white/60">
+              We believe a good wardrobe is built over time. Pieces should work together, feel
+              comfortable in real life and leave room for the person wearing them to make the
+              final statement.
+            </p>
+          </Reveal>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-white/10">
+              <Image src={ABOUT_IMAGE} alt="ELEVN campaign editorial" fill unoptimized sizes="(max-width: 1024px) 45vw, 25vw" className="object-cover" />
+            </div>
+            <div className="relative mt-8 aspect-[3/4] overflow-hidden rounded-xl bg-white/10">
+              <Image src={PROMO_IMAGE} alt="ELEVN collection campaign" fill unoptimized sizes="(max-width: 1024px) 45vw, 25vw" className="object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-paper py-12 md:py-16" aria-labelledby="wardrobe-heading">
+        <div className="shell">
+          <Reveal className="max-w-xl">
+            <p className="eyebrow text-ink/50">A considered wardrobe</p>
+            <h2 id="wardrobe-heading" className="display mt-2 text-[clamp(2rem,4.6vw,3.4rem)]">
+              Pieces that work together.
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-ink/60">
+              Explore the different sides of ELEVN, from everyday essentials to the finishing
+              details. Find a starting point and make it yours.
+            </p>
+          </Reveal>
+          <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {categories.map((category, index) => (
+              <Reveal key={category.slug} delay={index * 55}>
+                <Link href={`/shop?category=${category.slug}`} className="group block">
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-ink">
+                    <Image src={category.image} alt={category.name} fill unoptimized sizes="(max-width: 640px) 48vw, 24vw" className="object-cover transition duration-700 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink/75 to-transparent" />
+                    <p className="display absolute inset-x-0 bottom-0 p-4 text-2xl text-white">{category.name}</p>
+                  </div>
+                  <span className="mt-2 inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.16em] uppercase">
+                    Discover <ArrowRightIcon size={13} className="text-pink" />
+                  </span>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-lime pb-14">
         <div className="shell grid gap-3 sm:grid-cols-2">
           {categories.slice(0, 2).map((category) => (
