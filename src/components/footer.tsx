@@ -156,13 +156,12 @@ export function Footer() {
 
         <div className="mt-8 flex flex-col items-start justify-between gap-4 border-t border-white/12 pt-6 text-[11px] text-white/45 md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} ELEVN. All rights reserved.</p>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <Link href="/privacy" className="link-underline hover:text-white">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="link-underline hover:text-white">
-              Terms &amp; Conditions
-            </Link>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <Link href="/terms" className="link-underline hover:text-white">Terms of Service</Link>
+            <Link href="/privacy" className="link-underline hover:text-white">Privacy Policy</Link>
+            <Link href="/shipping-returns" className="link-underline hover:text-white">Shipping &amp; Returns</Link>
+            <Link href="/cookies" className="link-underline hover:text-white">Cookie Policy</Link>
+            <Link href="/security" className="link-underline hover:text-white">Security</Link>
             <span className="text-white/30">Lagos · Nigeria</span>
           </div>
         </div>
