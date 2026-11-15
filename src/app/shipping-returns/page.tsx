@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata: Metadata = { title:"Shipping & Returns", description:"Shipping, delivery, cancellation, exchange and return information for the ELEVN demo storefront." };
 const SECTIONS=[
 ["1. Demonstration notice","ELEVN is currently a demonstration storefront. Checkout does not create a live order, take payment or send an item for delivery. Delivery estimates and return details elsewhere on the site are illustrative examples only."],
-["2. Shipping and delivery","No shipping label is created and no parcel is dispatched. Any delivery timing, fee, free-shipping threshold or destination shown in the demo should not be relied on as a real service commitment."],
+["2. Shipping and delivery","The checkout demonstrates two options: home delivery (₦4,500) and pickup station collection (₦2,000). These are test prices only. No shipping label is created and no parcel is dispatched. The pickup point displayed in checkout is a demo location, not a confirmed operating collection station. Any delivery timing, fee or destination shown in the demo should not be relied on as a real service commitment."],
 ["3. Returns, exchanges and refunds","Because the demo does not accept real orders or payments, it cannot process a return, exchange, cancellation or refund. A simulated checkout success screen is not a purchase receipt."],
 ["4. Future live-store policy","Before a live store accepts orders, this page must be updated with confirmed delivery areas, partners, fees, timeframes, return eligibility, deadlines, refund methods and support details."],
 ["5. Questions","For questions about this demonstration, use the Contact page. Do not send card details, bank credentials or one-time passwords."]
