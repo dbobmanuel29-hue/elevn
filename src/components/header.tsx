@@ -105,9 +105,12 @@ export function Header() {
 
   useEffect(() => {
     if (!searchOpen) return;
+
     const query = term.trim();
-    setSearching(true);
     const controller = new AbortController();
+    let ignore = false;
+
+    if (query.length >= 2) setSearching(true);
     const timer = setTimeout(async () => {
       try {
         const url =
@@ -115,16 +118,18 @@ export function Header() {
             ? `/api/products?q=${encodeURIComponent(query)}&limit=6`
             : "/api/products?featured=1&limit=6";
         const response = await fetch(url, { signal: controller.signal });
+        if (!response.ok) throw new Error("Search request failed");
         const data = (await response.json()) as { products?: Product[] };
-        setResults(data.products ?? []);
+        if (!ignore) setResults(data.products ?? []);
       } catch {
-        /* aborted or offline */
+        /* Ignore aborted requests and temporary network errors. */
       } finally {
-        setSearching(false);
+        if (!ignore) setSearching(false);
       }
-    }, query.length >= 2 ? 220 : 0);
+    }, query.length >= 2 ? 350 : 0);
 
     return () => {
+      ignore = true;
       controller.abort();
       clearTimeout(timer);
     };
