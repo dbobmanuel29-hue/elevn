@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 
 import {
   ArrowRightIcon,
@@ -20,7 +19,6 @@ import { formatNaira, SHIPPING_FLAT_RATE, SHIPPING_THRESHOLD } from "@/lib/forma
 
 export default function CartPage() {
   const { cart, cartSubtotal, cartCount, hydrated, setQty, removeFromCart, clearCart } = useStore();
-  const [checkoutNotice, setCheckoutNotice] = useState(false);
 
   const shipping =
     cart.length === 0 || cartSubtotal >= SHIPPING_THRESHOLD ? 0 : SHIPPING_FLAT_RATE;
@@ -204,31 +202,13 @@ export default function CartPage() {
                 )}
               </div>
 
-              <button
-                type="button"
-                onClick={() => setCheckoutNotice(true)}
-                className="btn btn-ink mt-4 w-full"
-              >
+              <Link href="/checkout" className="btn btn-ink mt-4 w-full">
                 Checkout <ShieldIcon size={15} />
-              </button>
-
-              {checkoutNotice ? (
-                <div
-                  role="status"
-                  className="mt-3 rounded-xl border border-pink bg-pink/10 p-3 text-[11.5px] leading-relaxed text-ink"
-                >
-                  <p className="font-bold tracking-[0.12em] uppercase">Demo storefront</p>
-                  <p className="mt-1 text-ink/70">
-                    Payments and order processing are not connected. Your bag is saved in this
-                    browser so you can keep exploring. Newsletter and contact forms are live.
-                  </p>
-                </div>
-              ) : (
-                <p className="mt-3 text-[10.5px] leading-relaxed text-ink/50">
-                  Checkout is a demonstration. No card details are collected and no order is
-                  created.
-                </p>
-              )}
+              </Link>
+              <p className="mt-3 text-[10.5px] leading-relaxed text-ink/50">
+                Demo checkout supports simulated card and bank transfer confirmations. No real
+                payment is collected.
+              </p>
 
               <ul className="mt-4 space-y-2 border-t border-ink/12 pt-4 text-[11px] text-ink/60">
                 <li className="flex items-center gap-2">
