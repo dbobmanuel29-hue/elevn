@@ -1,96 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-
-export const metadata: Metadata = {
-  title: "Terms & Conditions",
-  description:
-    "ELEVN website terms: demo storefront notice, product information, pricing in Nigerian naira, delivery and returns.",
-};
-
+export const metadata: Metadata = { title: "Terms of Service", description: "Terms governing use of the ELEVN demonstration fashion storefront." };
 const SECTIONS = [
-  {
-    title: "1. Demo storefront notice",
-    body: [
-      "This website is a demonstration fashion storefront. Product browsing, search, the shopping bag and the wishlist are interactive and stored in your browser. Checkout includes simulated card and bank transfer confirmation flows, but no real payment is collected, no payment provider is contacted and no live order is created or fulfilled.",
-    ],
-  },
-  {
-    title: "2. Products and pricing",
-    body: [
-      "Products, descriptions and imagery are displayed for demonstration. Prices are shown in Nigerian naira (₦) and may not include delivery. Where a sale price is shown, the crossed-out price reflects the previous listed price.",
-    ],
-  },
-  {
-    title: "3. Delivery and returns",
-    body: [
-      "Standard delivery estimates in this demonstration are next-day for Lagos and 2–4 business days nationwide, with free standard delivery on orders over ₦150,000. Returns of unworn pieces with tags attached are accepted within 14 days in the real store; nothing can be returned from this demonstration because no order is created.",
-    ],
-  },
-  {
-    title: "4. Intellectual property",
-    body: [
-      "The ELEVN name, logo, layout and written content on this site are the property of ELEVN. Photography is used for demonstration purposes and remains the property of the respective photographers.",
-    ],
-  },
-  {
-    title: "5. Limitation of liability",
-    body: [
-      "Because this is a demonstration, the site is provided “as is” without warranties. We are not liable for any loss arising from use of the demonstration storefront.",
-    ],
-  },
-  {
-    title: "6. Contact",
-    body: [
-      "Questions about these terms: hello@elevn.studio · +234 801 234 5678 · 14 Adeola Odeku Street, Victoria Island, Lagos.",
-    ],
-  },
+{ title:"1. About this website", body:"ELEVN is currently a demonstration fashion storefront. Browsing, search, shopping bag, wishlist and checkout interactions are provided to demonstrate the experience. The website is not currently accepting real purchases." },
+{ title:"2. Products and prices", body:"Product names, descriptions, images, sizes, stock, prices and availability are illustrative catalogue content and may change. Prices are displayed in Nigerian naira (₦). Images may be illustrative and may not represent an exact item a future live store would supply." },
+{ title:"3. Orders and payments", body:"Card and bank-transfer checkout options simulate a successful payment only. The site does not collect card numbers, CVV codes, bank passwords, one-time passwords or transfer receipts. It does not contact a payment provider, take money, create a real order or reserve stock. A demo reference or success screen is not a receipt or proof of payment." },
+{ title:"4. Delivery, cancellations and returns", body:"Delivery estimates, fees and return information shown around the demonstration are examples only. No parcel is dispatched and no cancellation, exchange, return or refund can be processed because no real order or payment exists." },
+{ title:"5. Acceptable use", body:"Do not misuse the website, attempt unauthorised access, interfere with its operation, submit malicious content or use the demonstration to mislead anyone about a payment or purchase." },
+{ title:"6. Intellectual property", body:"The ELEVN name, visual identity, interface and original written content are presented as brand materials. Third-party photographs and assets remain subject to the rights and licences of their respective owners." },
+{ title:"7. Availability and liability", body:"The demonstration is provided on an “as is” and “as available” basis. Features may change or be interrupted during development. No uninterrupted availability or accuracy of demonstration data is guaranteed." },
+{ title:"8. Contact", body:"For questions about these terms, use the Contact page. Do not include passwords, payment credentials or other sensitive information in your message." }
 ];
-
-export default function TermsPage() {
-  return (
-    <section className="bg-lime pb-16">
-      <div className="shell max-w-3xl pt-8 md:pt-10">
-        <nav
-          aria-label="Breadcrumb"
-          className="flex items-center gap-2 text-[10px] tracking-[0.14em] uppercase text-ink/45"
-        >
-          <Link href="/" className="hover:text-ink">
-            Home
-          </Link>
-          <span aria-hidden="true">/</span>
-          <span className="text-ink">Terms &amp; Conditions</span>
-        </nav>
-
-        <h1 className="display mt-4 text-[clamp(2.2rem,5.6vw,4.25rem)]">
-          Terms &amp;
-          <br />
-          conditions<span className="text-pink">.</span>
-        </h1>
-        <p className="mt-3 text-[11px] font-semibold tracking-[0.14em] uppercase text-ink/45">
-          Last updated · February 2026
-        </p>
-
-        <div className="mt-7 space-y-6 rounded-2xl border border-ink/15 bg-paper p-5 sm:p-7">
-          {SECTIONS.map((section) => (
-            <div key={section.title}>
-              <h2 className="text-[13px] font-bold tracking-[0.06em] uppercase">{section.title}</h2>
-              {section.body.map((paragraph) => (
-                <p key={paragraph} className="mt-2 text-[13px] leading-relaxed text-ink/65">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          ))}
-          <div className="flex flex-wrap gap-2 border-t border-ink/12 pt-4">
-            <Link href="/privacy" className="btn btn-outline btn-sm">
-              Privacy policy
-            </Link>
-            <Link href="/contact" className="btn btn-ink btn-sm">
-              Contact the studio
-            </Link>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+export default function TermsPage(){return <section className="bg-lime pb-16"><div className="shell max-w-3xl pt-8 md:pt-10"><nav aria-label="Breadcrumb" className="flex items-center gap-2 text-[10px] tracking-[0.14em] uppercase text-ink/45"><Link href="/" className="hover:text-ink">Home</Link><span>/</span><span className="text-ink">Terms of Service</span></nav><h1 className="display mt-4 text-[clamp(2.2rem,5.6vw,4.25rem)]">Terms of<br/>service<span className="text-pink">.</span></h1><p className="mt-3 text-[11px] font-semibold tracking-[0.14em] uppercase text-ink/45">Last updated · November 2026</p><div className="mt-7 space-y-6 rounded-2xl border border-ink/15 bg-paper p-5 sm:p-7">{SECTIONS.map(section=><div key={section.title}><h2 className="text-[13px] font-bold tracking-[0.06em] uppercase">{section.title}</h2><p className="mt-2 text-[13px] leading-relaxed text-ink/65">{section.body}</p></div>)}<div className="flex flex-wrap gap-2 border-t border-ink/12 pt-4"><Link href="/privacy" className="btn btn-outline btn-sm">Privacy policy</Link><Link href="/shipping-returns" className="btn btn-outline btn-sm">Shipping &amp; returns</Link><Link href="/contact" className="btn btn-ink btn-sm">Contact</Link></div></div></div></section>}
