@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 import { ArrowUpRightIcon, MailIcon, PhoneIcon, PinIcon, SparkIcon } from "@/components/icons";
 import { ContactForm } from "@/components/contact-form";
 import { Reveal } from "@/components/reveal";
+import { ABOUT_IMAGE, PROMO_IMAGE } from "@/data/catalog";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -125,6 +127,31 @@ export default function ContactPage() {
             <Reveal>
               <ContactForm />
             </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-ink py-10 text-white md:py-14" aria-labelledby="support-heading">
+        <div className="shell grid gap-6 md:grid-cols-[1fr_1fr] md:items-center">
+          <div>
+            <p className="eyebrow text-lime">Here when you need us</p>
+            <h2 id="support-heading" className="display mt-2 text-[clamp(2rem,4.5vw,3.3rem)]">
+              Good service is part of the fit.
+            </h2>
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-white/60">
+              Whether you are choosing a size, checking an order or planning a gift, send the studio
+              a message and include the details that will help us point you in the right direction.
+            </p>
+            <Link href="/about" className="mt-5 inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.16em] text-lime uppercase">
+              Get to know ELEVN <ArrowUpRightIcon size={14} />
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            {[ABOUT_IMAGE, PROMO_IMAGE].map((src, index) => (
+              <div key={src} className={`relative overflow-hidden rounded-xl bg-white/10 ${index === 0 ? "aspect-[3/4]" : "mt-8 aspect-[3/4]"}`}>
+                <Image src={src} alt={index === 0 ? "ELEVN campaign style" : "ELEVN studio collection"} fill unoptimized sizes="(max-width: 768px) 45vw, 25vw" className="object-cover" />
+              </div>
+            ))}
           </div>
         </div>
       </section>
