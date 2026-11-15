@@ -11,7 +11,7 @@ const SECTIONS = [
   {
     title: "1. What this policy covers",
     body: [
-      "This privacy policy explains how ELEVN (“we”, “us”) handles information when you browse and interact with this storefront. This build is a demonstration storefront: payments, account login and order fulfilment are not connected.",
+      "This privacy policy explains how ELEVN (“we”, “us”) handles information when you browse and interact with this storefront. This is a demonstration storefront: checkout can simulate card or bank transfer success, but no real payment details are collected, no payment provider is contacted and no live order is created. Account login and order fulfilment are not connected.",
     ],
   },
   {
