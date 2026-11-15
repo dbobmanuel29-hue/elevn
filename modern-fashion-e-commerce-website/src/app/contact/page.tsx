@@ -1,0 +1,170 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+import { ArrowUpRightIcon, MailIcon, PhoneIcon, PinIcon, SparkIcon } from "@/components/icons";
+import { ContactForm } from "@/components/contact-form";
+import { Reveal } from "@/components/reveal";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Talk to the ELEVN studio about sizing, orders, press or wholesale. Lagos based, replying within one business day.",
+};
+
+const DETAILS = [
+  {
+    Icon: MailIcon,
+    label: "Email",
+    value: "hello@elevn.studio",
+    href: "mailto:hello@elevn.studio",
+    note: "Replies within one business day",
+  },
+  {
+    Icon: PhoneIcon,
+    label: "Phone / WhatsApp",
+    value: "+234 801 234 5678",
+    href: "tel:+2348012345678",
+    note: "Mon – Sat · 9am – 6pm WAT",
+  },
+  {
+    Icon: PinIcon,
+    label: "Studio",
+    value: "14 Adeola Odeku St, Victoria Island, Lagos",
+    href: "https://maps.google.com/?q=Adeola+Odeku+Street+Victoria+Island+Lagos",
+    note: "Appointments only",
+  },
+];
+
+const FAQS = [
+  {
+    q: "How do I know my size?",
+    a: "Every product page lists the available sizes and fit notes. Our pieces are cut true to size; size up for an oversized editorial fit. Still unsure? Message us with your usual size and we’ll advise.",
+  },
+  {
+    q: "How long does delivery take?",
+    a: "Lagos orders arrive next day when placed before 2pm WAT. Nationwide delivery is 2–4 business days. Delivery is free on orders over ₦150,000.",
+  },
+  {
+    q: "Can I return a piece?",
+    a: "Yes — unworn pieces with tags attached can be returned within 14 days of delivery. Contact the studio to arrange a pickup or drop-off.",
+  },
+  {
+    q: "Do you ship internationally?",
+    a: "We ship to the UK, Ghana and Kenya from the Lagos studio. Email us with the pieces you want and we’ll send a shipping quote.",
+  },
+];
+
+export default function ContactPage() {
+  return (
+    <>
+      <section className="bg-lime pb-12 md:pb-16">
+        <div className="shell pt-8 md:pt-10">
+          <nav
+            aria-label="Breadcrumb"
+            className="flex items-center gap-2 text-[10px] tracking-[0.14em] uppercase text-ink/45"
+          >
+            <Link href="/" className="hover:text-ink">
+              Home
+            </Link>
+            <span aria-hidden="true">/</span>
+            <span className="text-ink">Contact</span>
+          </nav>
+
+          <div className="mt-5 grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-12">
+            <div>
+              <p className="eyebrow flex items-center gap-2 text-ink/55">
+                <SparkIcon size={12} className="text-pink" /> Studio support
+              </p>
+              <h1 className="display mt-3 text-[clamp(2.6rem,7vw,5.5rem)]">
+                Let’s talk
+                <br />
+                fashion<span className="text-pink">.</span>
+              </h1>
+              <p className="serif-italic mt-4 max-w-md text-[clamp(1.15rem,1.8vw,1.5rem)] text-ink/75">
+                Sizing questions, order help, press requests or a wholesale enquiry — this goes
+                straight to the people who make the clothes.
+              </p>
+
+              <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                {DETAILS.map(({ Icon, label, value, href, note }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target={href.startsWith("http") ? "_blank" : undefined}
+                    rel={href.startsWith("http") ? "noreferrer noopener" : undefined}
+                    className="group rounded-xl border border-ink/20 bg-lime p-4 transition hover:border-ink hover:bg-paper"
+                  >
+                    <div className="flex items-start justify-between">
+                      <span className="flex size-9 items-center justify-center rounded-full bg-ink text-lime transition group-hover:bg-pink group-hover:text-white">
+                        <Icon size={16} />
+                      </span>
+                      <ArrowUpRightIcon
+                        size={14}
+                        className="text-ink/35 transition group-hover:text-pink"
+                      />
+                    </div>
+                    <p className="mt-3 text-[9px] font-bold tracking-[0.18em] uppercase text-ink/45">
+                      {label}
+                    </p>
+                    <p className="mt-1 text-[12.5px] leading-snug font-semibold">{value}</p>
+                    <p className="mt-1 text-[10.5px] text-ink/50">{note}</p>
+                  </a>
+                ))}
+                <div className="rounded-xl border border-ink bg-ink p-4 text-white">
+                  <p className="text-[9px] font-bold tracking-[0.18em] uppercase text-lime">
+                    Response time
+                  </p>
+                  <p className="display mt-2 text-3xl text-lime">1 day</p>
+                  <p className="mt-1 text-[10.5px] text-white/55">
+                    Average first reply, Mon – Sat.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <Reveal>
+              <ContactForm />
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-paper py-12 md:py-16" aria-labelledby="faq-heading">
+        <div className="shell">
+          <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr]">
+            <div>
+              <p className="eyebrow text-ink/50">Before you write</p>
+              <h2 id="faq-heading" className="display mt-3 text-[clamp(2rem,4.4vw,3.2rem)]">
+                Quick answers
+              </h2>
+              <p className="mt-3 max-w-xs text-sm text-ink/60">
+                The questions we answer most often. If yours is not here, the form above is the
+                fastest route.
+              </p>
+              <Link
+                href="/shop"
+                className="mt-5 inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.16em] uppercase"
+              >
+                Browse the collection <ArrowUpRightIcon size={14} className="text-pink" />
+              </Link>
+            </div>
+
+            <div className="divide-y divide-ink/12 border-y border-ink/12">
+              {FAQS.map((item) => (
+                <details key={item.q} className="group py-4">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[13px] font-bold tracking-[0.02em] uppercase">
+                    {item.q}
+                    <span className="text-lg leading-none transition group-open:rotate-45">+</span>
+                  </summary>
+                  <p className="mt-2.5 max-w-2xl text-[13px] leading-relaxed text-ink/60">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
