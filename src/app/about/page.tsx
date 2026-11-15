@@ -89,6 +89,7 @@ export default function AboutPage() {
                   fill
                   priority
                   sizes="(max-width: 1024px) 90vw, 44vw"
+                  unoptimized
                   className="object-cover"
                 />
               </div>
@@ -157,6 +158,7 @@ export default function AboutPage() {
                 alt="ELEVN models in the all-season campaign"
                 fill
                 sizes="(max-width: 1024px) 90vw, 42vw"
+                  unoptimized
                 className="object-cover"
               />
             </div>
@@ -183,6 +185,33 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="bg-paper py-12 md:py-16" aria-labelledby="wear-heading">
+        <div className="shell grid gap-7 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <p className="eyebrow text-ink/50">A wardrobe, not a moment</p>
+            <h2 id="wear-heading" className="display mt-2 text-[clamp(2rem,4.6vw,3.4rem)]">
+              Designed to be worn on repeat.
+            </h2>
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-ink/60">
+              We think the best pieces earn their place in your week. Start with a strong foundation,
+              add a layer with character, and make the outfit your own.
+            </p>
+            <Link href="/shop" className="btn btn-ink mt-5">Explore the wardrobe <ArrowRightIcon size={15} /></Link>
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            {editorial.slice(0, 2).map((item) => (
+              <div key={item.title} className="relative aspect-[3/4] overflow-hidden rounded-xl bg-ink">
+                <Image src={item.image} alt={item.title} fill unoptimized sizes="(max-width: 1024px) 45vw, 25vw" className="object-cover" />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 to-transparent p-3 pt-12 text-white">
+                  <p className="eyebrow text-lime">{item.tag}</p>
+                  <p className="display mt-1 text-xl">{item.title}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-lime pb-14">
         <div className="shell grid gap-3 sm:grid-cols-2">
           {categories.slice(0, 2).map((category) => (
@@ -196,6 +225,7 @@ export default function AboutPage() {
                 alt={category.name}
                 fill
                 sizes="(max-width: 640px) 100vw, 50vw"
+                  unoptimized
                 className="object-cover opacity-85 transition duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
