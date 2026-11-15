@@ -35,9 +35,14 @@ type Toast = {
 };
 
 type AddOptions = { qty?: number; size?: string; silent?: boolean };
+export type DemoMember = { name: string; email: string; provider: "email" | "google" };
+const MEMBER_KEY = "elevn.demo.member.v1";
 
 type StoreValue = {
   hydrated: boolean;
+  member: DemoMember | null;
+  signInDemo: (member: DemoMember) => void;
+  signOutDemo: () => void;
   cart: CartLine[];
   wishlist: WishlistItem[];
   recentlyViewed: Product[];
@@ -87,6 +92,7 @@ function writeStorage(key: string, value: unknown) {
 
 export function StoreProvider({ children }: { children: ReactNode }) {
   const [hydrated, setHydrated] = useState(false);
+  const [member, setMember] = useState<DemoMember | null>(null);
   const [cart, setCart] = useState<CartLine[]>([]);
   const [wishlist, setWishlist] = useState<WishlistItem[]>([]);
   const [recentlyViewed, setRecentlyViewed] = useState<Product[]>([]);
@@ -97,7 +103,9 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => {
-    setCart(readStorage<CartLine[]>(CART_KEY, []));
+    const savedMember = (() => { try { return JSON.parse(window.localStorage.getItem(MEMBER_KEY) || "null") as DemoMember | null; } catch { return null; } })();
+    setMember(savedMember);
+    setCart(savedMember ? readStorage<CartLine[]>(CART_KEY, []) : []);
     setWishlist(readStorage<WishlistItem[]>(WISHLIST_KEY, []));
     setRecentlyViewed(readStorage<Product[]>(RECENT_KEY, []));
     setHydrated(true);
@@ -139,8 +147,29 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     setToasts((current) => current.filter((toast) => toast.id !== id));
   }, []);
 
+  const signInDemo = useCallback((nextMember: DemoMember) => {
+    window.localStorage.setItem(MEMBER_KEY, JSON.stringify(nextMember));
+    setMember(nextMember);
+    notify("Welcome to ELEVN", nextMember.name, "pink");
+  }, [notify]);
+
+  const signOutDemo = useCallback(() => {
+    window.localStorage.removeItem(MEMBER_KEY);
+    setMember(null);
+    setCart([]);
+    setCartOpen(false);
+    notify("Signed out", "Your demo session has ended.");
+  }, [notify]);
+
   const addToCart = useCallback(
-    (product: Product, options?: AddOptions) => {
+    (product: Product, options?: AddOptions): boolean => {
+      if (!member) {
+        const next = `${window.location.pathname}${window.location.search}`;
+        window.sessionStorage.setItem("elevn.auth.returnTo", next);
+        notify("Create an account first", "Join ELEVN to add pieces to your bag.", "pink");
+        window.location.assign("/account?mode=signup");
+        return false;
+      }
       const qty = Math.max(1, Math.min(options?.qty ?? 1, 10));
       const size = options?.size ?? product.sizes?.[0] ?? "One size";
       const key = `${product.slug}::${size}`;
@@ -170,8 +199,9 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       if (!options?.silent) {
         notify("Added to bag", `${product.name} · ${size}`, "ink");
       }
+      return true;
     },
-    [notify],
+    [member, notify],
   );
 
   const removeFromCart = useCallback((key: string) => {
@@ -237,6 +267,9 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const value = useMemo<StoreValue>(
     () => ({
       hydrated,
+      member,
+      signInDemo,
+      signOutDemo,
       cart,
       wishlist,
       recentlyViewed,
@@ -258,6 +291,9 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     }),
     [
       hydrated,
+      member,
+      signInDemo,
+      signOutDemo,
       cart,
       wishlist,
       recentlyViewed,
