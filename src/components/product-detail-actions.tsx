@@ -116,8 +116,8 @@ export function ProductDetailActions({ product }: { product: Product }) {
         ))}
       </ul>
       <p className="mt-4 rounded-xl border border-ink/15 bg-lime/30 p-3 text-[11px] leading-relaxed text-ink/60">
-        Demo storefront: this bag is saved to your browser only. No payment is taken and no order is
-        placed.
+        Demo storefront: you can complete a simulated card or bank transfer checkout. No real
+        payment is collected and no live order is placed.
       </p>
     </div>
   );
