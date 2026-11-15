@@ -150,8 +150,8 @@ export function Footer() {
         </div>
 
         <div className="mt-10 rounded-2xl border border-white/12 bg-white/[0.03] px-4 py-3 text-[11px] leading-relaxed text-white/45 md:mt-12">
-          Demo storefront: cart, wishlist and product data are live and stored in this browser. No
-          payment is processed and no order is created. Newsletter signups are saved to the store
+          Demo storefront: cart, wishlist and demo order/tracking records are stored in this browser. No
+          payment is processed and no real order is created or dispatched. Newsletter signups are saved to the store
           database.
         </div>
 
