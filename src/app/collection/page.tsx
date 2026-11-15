@@ -17,7 +17,7 @@ const MOVEMENTS = [
     number: "01",
     title: "Quiet tailoring",
     copy: "Soft-shouldered blazers, column trousers and poplin that holds a line. Clothes for rooms where you would rather be heard than noticed.",
-    image: HERO_IMAGE,
+    image: categories[0].image,
     href: "/shop?category=women",
     cta: "Shop women",
   },
