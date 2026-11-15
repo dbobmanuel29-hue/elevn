@@ -225,8 +225,15 @@ export function ShopResults({ products, filters, facets }: ShopResultsProps) {
   const latest = useRef(filters);
   latest.current = filters;
   const firstRender = useRef(true);
+  const lastLocalQuery = useRef<string | null>(null);
 
   useEffect(() => {
+    // A local debounced search updates the URL. Do not copy that intermediate
+    // URL value back into the input while the user is still typing.
+    if (lastLocalQuery.current === filters.q) {
+      lastLocalQuery.current = null;
+      return;
+    }
     setTerm(filters.q);
   }, [filters.q]);
 
@@ -261,7 +268,11 @@ export function ShopResults({ products, filters, facets }: ShopResultsProps) {
       return;
     }
     if (term.trim() === latest.current.q) return;
-    const timer = setTimeout(() => navigate({ q: term }), 320);
+    const timer = setTimeout(() => {
+      const query = term.trim();
+      lastLocalQuery.current = query;
+      navigate({ q: query });
+    }, 450);
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [term]);
