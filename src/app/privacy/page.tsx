@@ -1,96 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description:
-    "How ELEVN handles your data: what we store, where cart and wishlist information lives, and how to contact us about privacy.",
-};
-
-const SECTIONS = [
-  {
-    title: "1. What this policy covers",
-    body: [
-      "This privacy policy explains how ELEVN (“we”, “us”) handles information when you browse and interact with this storefront. This is a demonstration storefront: checkout can simulate card or bank transfer success, but no real payment details are collected, no payment provider is contacted and no live order is created. Account login and order fulfilment are not connected.",
-    ],
-  },
-  {
-    title: "2. Information you give us",
-    body: [
-      "If you subscribe to the newsletter, we store the email address you provide, the page you subscribed from and a timestamp. That record lives in the store database so we can manage the list.",
-      "If you contact the studio, we store the name, email address and message you submit so the team can reply. We never ask for card details or government identification through these forms.",
-    ],
-  },
-  {
-    title: "3. Information stored in your browser",
-    body: [
-      "Your shopping bag and wishlist are stored in your browser using localStorage. That data does not leave your device and is not sent to us. Clearing your browser storage or using another browser or device will reset both.",
-      "We do not set advertising cookies and we do not sell personal information.",
-    ],
-  },
-  {
-    title: "4. How long we keep information",
-    body: [
-      "Newsletter records are kept until you unsubscribe or ask us to delete them. Contact messages are kept for up to 24 months so we can refer back to a conversation.",
-    ],
-  },
-  {
-    title: "5. Your choices",
-    body: [
-      "You can unsubscribe from the newsletter at any time by replying to any email or writing to hello@elevn.studio. You can request a copy or deletion of the information we hold about you by emailing the same address.",
-      "You can clear your bag and wishlist at any time from the cart and wishlist pages, or by clearing your browser storage.",
-    ],
-  },
-  {
-    title: "6. Contact",
-    body: [
-      "Privacy questions: hello@elevn.studio · 14 Adeola Odeku Street, Victoria Island, Lagos, Nigeria.",
-    ],
-  },
+export const metadata: Metadata = { title:"Privacy Policy", description:"What information the ELEVN demonstration storefront stores and how it is used." };
+const SECTIONS=[
+{title:"1. Scope",body:"This policy explains how information is handled when you browse and interact with the ELEVN demonstration storefront. Checkout does not create real orders or process payments, and the account area is not connected to a live customer account system."},
+{title:"2. Information you submit",body:"If you submit the contact form, your name, email address and message are sent to the website server and saved in its database so the enquiry can be reviewed. If you subscribe to the newsletter, your email address, signup source and a timestamp are saved in the website database. Do not submit passwords, payment credentials or identity documents."},
+{title:"3. Shopping bag and wishlist",body:"The shopping bag and wishlist are stored in your browser using local storage so selections can remain available on the same browser. Clearing browser site data, using private browsing or switching devices may remove or reset them."},
+{title:"4. Payments",body:"Checkout only simulates card or bank-transfer success. No card number, CVV, bank password, one-time password or transfer receipt is requested or stored by the demo checkout. No payment provider is contacted and no actual payment is made."},
+{title:"5. Cookies and third parties",body:"The site uses browser storage for shopping bag and wishlist features and hosted infrastructure and third-party assets such as fonts and product photography. Those providers may process technical information under their own terms. See the Cookie Policy for more details."},
+{title:"6. Use and retention",body:"Contact information is used to handle enquiries; newsletter email addresses are used to manage the newsletter list. Contact and newsletter records remain in the website database until deleted through the relevant administration process. You can request access, correction or deletion through the Contact page."},
+{title:"7. Security",body:"No online service can promise absolute security. Use an up-to-date browser and do not submit sensitive credentials. The website's hosting, database and asset providers may process technical information as part of delivering their services."},
+{title:"8. Contact",body:"For a privacy request, use the Contact page and state that your message concerns privacy. Never include a password or payment credential."}
 ];
-
-export default function PrivacyPage() {
-  return (
-    <section className="bg-lime pb-16">
-      <div className="shell max-w-3xl pt-8 md:pt-10">
-        <nav
-          aria-label="Breadcrumb"
-          className="flex items-center gap-2 text-[10px] tracking-[0.14em] uppercase text-ink/45"
-        >
-          <Link href="/" className="hover:text-ink">
-            Home
-          </Link>
-          <span aria-hidden="true">/</span>
-          <span className="text-ink">Privacy Policy</span>
-        </nav>
-
-        <h1 className="display mt-4 text-[clamp(2.4rem,6vw,4.5rem)]">
-          Privacy
-          <br />
-          policy<span className="text-pink">.</span>
-        </h1>
-        <p className="mt-3 text-[11px] font-semibold tracking-[0.14em] uppercase text-ink/45">
-          Last updated · February 2026
-        </p>
-
-        <div className="mt-7 space-y-6 rounded-2xl border border-ink/15 bg-paper p-5 sm:p-7">
-          {SECTIONS.map((section) => (
-            <div key={section.title}>
-              <h2 className="text-[13px] font-bold tracking-[0.06em] uppercase">{section.title}</h2>
-              {section.body.map((paragraph) => (
-                <p key={paragraph} className="mt-2 text-[13px] leading-relaxed text-ink/65">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          ))}
-          <div className="border-t border-ink/12 pt-4">
-            <Link href="/contact" className="btn btn-ink">
-              Ask a privacy question
-            </Link>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+export default function PrivacyPage(){return <section className="bg-lime pb-16"><div className="shell max-w-3xl pt-8 md:pt-10"><nav aria-label="Breadcrumb" className="flex items-center gap-2 text-[10px] tracking-[0.14em] uppercase text-ink/45"><Link href="/" className="hover:text-ink">Home</Link><span>/</span><span className="text-ink">Privacy Policy</span></nav><h1 className="display mt-4 text-[clamp(2.4rem,6vw,4.5rem)]">Privacy<br/>policy<span className="text-pink">.</span></h1><p className="mt-3 text-[11px] font-semibold tracking-[0.14em] uppercase text-ink/45">Last updated · November 2026</p><div className="mt-7 space-y-6 rounded-2xl border border-ink/15 bg-paper p-5 sm:p-7">{SECTIONS.map(section=><div key={section.title}><h2 className="text-[13px] font-bold tracking-[0.06em] uppercase">{section.title}</h2><p className="mt-2 text-[13px] leading-relaxed text-ink/65">{section.body}</p></div>)}<div className="flex flex-wrap gap-2 border-t border-ink/12 pt-4"><Link href="/cookies" className="btn btn-outline btn-sm">Cookie policy</Link><Link href="/security" className="btn btn-outline btn-sm">Security</Link><Link href="/contact" className="btn btn-ink btn-sm">Privacy questions</Link></div></div></div></section>}
