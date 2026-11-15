@@ -8,28 +8,49 @@ import type { Product } from "@/data/catalog";
 
 export function ProductCarousel({ products, label }: { products: Product[]; label: string }) {
   const scroller = useRef<HTMLDivElement | null>(null);
+  const frame = useRef<number | null>(null);
   const [state, setState] = useState({ atStart: true, atEnd: false, progress: 0 });
 
   const update = useCallback(() => {
     const el = scroller.current;
     if (!el) return;
     const max = el.scrollWidth - el.clientWidth;
-    setState({
+    const next = {
       atStart: el.scrollLeft <= 4,
       atEnd: el.scrollLeft >= max - 4,
       progress: max > 0 ? el.scrollLeft / max : 0,
+    };
+    setState((current) => {
+      if (
+        current.atStart === next.atStart &&
+        current.atEnd === next.atEnd &&
+        Math.abs(current.progress - next.progress) < 0.005
+      ) {
+        return current;
+      }
+      return next;
     });
   }, []);
 
   useEffect(() => {
     const el = scroller.current;
     if (!el) return;
+
+    const scheduleUpdate = () => {
+      if (frame.current !== null) return;
+      frame.current = window.requestAnimationFrame(() => {
+        frame.current = null;
+        update();
+      });
+    };
+
     update();
-    el.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
+    el.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
     return () => {
-      el.removeEventListener("scroll", update);
-      window.removeEventListener("resize", update);
+      el.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      if (frame.current !== null) window.cancelAnimationFrame(frame.current);
     };
   }, [update]);
 
