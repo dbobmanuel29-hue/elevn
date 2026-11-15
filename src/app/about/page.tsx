@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { ArrowRightIcon, CheckIcon, SparkIcon } from "@/components/icons";
 import { Reveal } from "@/components/reveal";
-import { ABOUT_IMAGE, categories, PROMO_IMAGE } from "@/data/catalog";
+import { ABOUT_IMAGE, categories, editorial, PROMO_IMAGE } from "@/data/catalog";
 
 export const metadata: Metadata = {
   title: "About",
