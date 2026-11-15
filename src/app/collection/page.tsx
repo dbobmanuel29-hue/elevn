@@ -103,6 +103,7 @@ export default function CollectionPage() {
                   fill
                   priority
                   sizes="(max-width: 1024px) 90vw, 42vw"
+                  unoptimized
                   className="object-cover"
                 />
               </div>
@@ -113,6 +114,7 @@ export default function CollectionPage() {
                     alt="SS26 knitwear detail"
                     fill
                     sizes="160px"
+                  unoptimized
                     className="object-cover"
                   />
                 </div>
@@ -182,6 +184,7 @@ export default function CollectionPage() {
                       alt={movement.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
+                  unoptimized
                       className="object-cover"
                     />
                     <span className="absolute top-3 left-3 rounded-full bg-lime px-2.5 py-1 text-[9px] font-bold tracking-[0.16em] uppercase">
@@ -243,6 +246,7 @@ export default function CollectionPage() {
                   alt={item.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  unoptimized
                   className="object-cover opacity-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/85 to-transparent" />
@@ -256,6 +260,36 @@ export default function CollectionPage() {
               </div>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-ink py-12 text-white md:py-16" aria-labelledby="details-heading">
+        <div className="shell">
+          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <div>
+              <p className="eyebrow text-lime">The details matter</p>
+              <h2 id="details-heading" className="display mt-2 text-[clamp(2rem,4.6vw,3.4rem)]">
+                Considered from first sketch to final stitch.
+              </h2>
+            </div>
+            <p className="max-w-xl text-sm leading-relaxed text-white/60">
+              Explore the collection by mood, category or the pieces you reach for most. Each edit
+              is designed to work on its own and layer naturally with the rest of the wardrobe.
+            </p>
+          </div>
+          <div className="mt-7 grid gap-3 sm:grid-cols-3">
+            {[
+              { title: "Start with a base", copy: "Build around the pieces that make getting dressed feel easy." },
+              { title: "Add a layer", copy: "Bring structure, texture and a little contrast into the look." },
+              { title: "Make it yours", copy: "Finish with the accessories and details that feel like you." },
+            ].map((item, index) => (
+              <article key={item.title} className="border-t border-white/20 pt-4">
+                <p className="display text-3xl text-lime">0{index + 1}</p>
+                <h3 className="mt-3 text-[11px] font-bold tracking-[0.12em] uppercase">{item.title}</h3>
+                <p className="mt-2 text-[12px] leading-relaxed text-white/55">{item.copy}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
