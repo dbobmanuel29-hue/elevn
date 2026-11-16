@@ -466,11 +466,30 @@
 }
 
 
-/* ELEVN visual refinement: calm neutral surfaces, precise spacing, restrained accents. */
+/* ELEVN brand balance: neutral foundations, lime as the lead accent, pink used sparingly. */
 @layer components {
   .btn {
-    letter-spacing: 0.13em;
-    min-height: 2.85rem;
+    letter-spacing: 0.12em;
+    min-height: 2.8rem;
+  }
+
+  .btn-ink {
+    --btn-fill: var(--color-lime);
+  }
+
+  .btn-ink:hover:not(:disabled) {
+    border-color: var(--color-lime);
+    color: var(--color-ink);
+  }
+
+  .btn-lime {
+    --btn-fill: var(--color-ink);
+  }
+
+  .chip:hover:not([data-active="true"]) {
+    border-color: var(--color-lime);
+    background-color: var(--color-lime);
+    color: var(--color-ink);
   }
 
   .btn-lg {
@@ -492,6 +511,19 @@
   main > section.bg-lime,
   main > section.grain.bg-lime {
     background-color: var(--color-paper);
+  }
+
+  .grain::after {
+    opacity: 0.02;
+  }
+
+  :where(section, article, aside) > .shell > :first-child {
+    scroll-margin-top: 6rem;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
