@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import type { Product } from "@/data/catalog";
-import { formatNaira } from "@/lib/format";
 import { ArrowUpRightIcon } from "@/components/icons";
 
 type HeroModelSwapProps = {
@@ -61,19 +60,17 @@ export function HeroModelSwap({ menProduct, womenProduct }: HeroModelSwapProps) 
         <Link
           href={`/shop/${activeProduct.slug}`}
           onClick={(event) => event.stopPropagation()}
-          className="absolute bottom-3 left-1/2 z-20 flex w-[min(270px,88%)] -translate-x-1/2 items-center gap-3 rounded-xl border border-ink/10 bg-paper/95 p-3 shadow-[0_18px_40px_-24px_rgba(17,17,17,0.7)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-pink focus-visible:border-pink sm:bottom-7"
-          aria-label={`View ${activeProduct.name} for ${formatNaira(activeProduct.price)}`}
+          className="absolute bottom-3 left-1/2 z-20 flex w-[min(270px,88%)] -translate-x-1/2 items-center gap-3 rounded-full border border-ink/10 bg-paper/95 px-4 py-3 shadow-[0_18px_40px_-24px_rgba(17,17,17,0.7)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-pink focus-visible:border-pink sm:bottom-7"
+          aria-label={`Explore ${activeProduct.name}`}
         >
           <span className="min-w-0 flex-1">
             <span className="block text-[8px] font-semibold tracking-[0.16em] text-pink uppercase">
-              {showSecond ? "Womenswear" : "Menswear"} · Shop this look
+              {showSecond ? "Womenswear" : "Menswear"} · Discover the look
             </span>
             <span className="mt-1 block truncate text-[11px] font-bold uppercase text-ink">
               {activeProduct.name}
             </span>
-            <span className="mt-1 block text-sm font-semibold text-ink">
-              {formatNaira(activeProduct.price)}
-            </span>
+            <span className="mt-1 block text-[9px] font-semibold tracking-[0.14em] text-ink/55 uppercase">Explore the collection</span>
           </span>
           <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-ink text-lime transition-colors group-hover:bg-pink">
             <ArrowUpRightIcon size={15} />
