@@ -84,16 +84,7 @@ export default async function HomePage() {
   return (
     <>
       {/* ---------------------------------------------------------------- HERO */}
-      <section className="grain overflow-hidden bg-paper">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-[0.16]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, rgba(17,17,17,0.16) 1px, transparent 0)",
-            backgroundSize: "32px 32px",
-          }}
-        />
+      <section className="overflow-hidden bg-paper">
         <div className="shell relative">
           <p
             aria-hidden="true"
@@ -105,7 +96,7 @@ export default async function HomePage() {
           <div className="grid items-center gap-12 pt-8 pb-12 lg:grid-cols-[1.02fr_1fr] lg:gap-6 lg:py-14">
             <div className="relative z-10">
               <div className="flex items-center gap-3">
-                <span className="size-2 rounded-full bg-pink" />
+                <span className="size-2 rounded-full bg-lime ring-2 ring-lime/25" />
                 <p className="eyebrow">New season · SS26 / Volume 01</p>
               </div>
 
@@ -113,7 +104,7 @@ export default async function HomePage() {
                 <span className="block">Create a</span>
                 <span className="outline-ink block">Fashion</span>
                 <span className="block">
-                  Vibe<span className="text-pink">.</span>
+                  Vibe<span className="text-lime">.</span>
                 </span>
               </h1>
 
@@ -135,7 +126,7 @@ export default async function HomePage() {
                 </Link>
                 <Link href="/collection" className="btn btn-outline btn-lg group w-full sm:w-auto">
                   Explore collection
-                  <span className="flex size-6 items-center justify-center rounded-full bg-ink text-lime transition-colors duration-300 group-hover:bg-lime group-hover:text-ink">
+                  <span className="flex size-6 items-center justify-center rounded-full bg-lime text-ink transition-colors duration-300 group-hover:bg-ink group-hover:text-lime">
                     <ArrowUpRightIcon size={12} />
                   </span>
                 </Link>
@@ -161,8 +152,8 @@ export default async function HomePage() {
 
             <div className="relative">
               <div className="relative mx-auto w-full max-w-[560px]">
-                <div className="absolute -top-2 -left-2 hidden size-20 rounded-full border border-ink/20 sm:block" />
-                <div className="relative overflow-hidden rounded-[1.75rem] rounded-tr-[6rem] border-2 border-ink bg-mist shadow-[12px_12px_0_0_rgba(198,247,53,0.7)] sm:shadow-[16px_16px_0_0_rgba(198,247,53,0.7)]">
+                 
+                <div className="relative overflow-hidden rounded-[1.75rem] rounded-tr-[6rem] border border-ink/10 bg-mist shadow-[0_18px_48px_-34px_rgba(17,17,17,0.32)]">
                   <Image
                     src={HERO_IMAGE}
                     alt="ELEVN model wearing a tailored white suit from the SS26 collection"
@@ -182,9 +173,7 @@ export default async function HomePage() {
                   </div>
                 </div>
 
-                <div className="absolute -top-1 right-4 hidden animate-float rounded-full bg-ink px-3.5 py-2 text-[10px] font-bold tracking-[0.18em] text-lime uppercase sm:block">
-                  Drop 01
-                </div>
+                 
 
                 {heroPick ? (
                   <Link
@@ -384,7 +373,7 @@ export default async function HomePage() {
                 </p>
                 <h2 id="spotlight-heading" className="display mt-4 text-[clamp(2.3rem,5vw,4.2rem)]">
                   {spotlight.name}
-                  <span className="text-pink">.</span>
+                  <span className="text-lime">.</span>
                 </h2>
                 <p className="serif-italic mt-3 text-[clamp(1.1rem,1.7vw,1.45rem)] text-ink/70">
                   The centrepiece of SS26 — cut once, worn for a decade.
