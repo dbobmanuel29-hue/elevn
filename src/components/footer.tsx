@@ -153,9 +153,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 rounded-xl border border-white/10 bg-white/[0.025] px-4 py-3 text-[11px] leading-relaxed text-white/45 md:mt-10">
-          Demo storefront: cart, wishlist and demo order/tracking records are stored in this browser. No
-          payment is processed and no real order is created or dispatched. Newsletter signups are saved to the store
-          database.
+          Shopping bag and wishlist preferences may be stored in this browser. Online payments, order fulfilment and courier tracking are not yet available. Newsletter signups are saved to the store database.
         </div>
 
         <div className="mt-8 flex flex-col items-start justify-between gap-4 border-t border-white/12 pt-6 text-[11px] text-white/45 md:flex-row md:items-center">
