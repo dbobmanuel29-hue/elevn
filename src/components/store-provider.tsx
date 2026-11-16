@@ -36,6 +36,7 @@ type Toast = {
 
 type AddOptions = { qty?: number; size?: string; silent?: boolean };
 export type DemoMember = { name: string; email: string; provider: "email" | "google" };
+
 const MEMBER_KEY = "elevn.demo.member.v1";
 
 type StoreValue = {
@@ -53,7 +54,7 @@ type StoreValue = {
   setCartOpen: (open: boolean) => void;
   openQuickView: (product: Product) => void;
   closeQuickView: () => void;
-  addToCart: (product: Product, options?: AddOptions) => void;
+  addToCart: (product: Product, options?: AddOptions) => boolean;
   removeFromCart: (key: string) => void;
   setQty: (key: string, qty: number) => void;
   clearCart: () => void;
@@ -103,7 +104,13 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => {
-    const savedMember = (() => { try { return JSON.parse(window.localStorage.getItem(MEMBER_KEY) || "null") as DemoMember | null; } catch { return null; } })();
+    const savedMember = (() => {
+      try {
+        return JSON.parse(window.localStorage.getItem(MEMBER_KEY) || "null") as DemoMember | null;
+      } catch {
+        return null;
+      }
+    })();
     setMember(savedMember);
     setCart(savedMember ? readStorage<CartLine[]>(CART_KEY, []) : []);
     setWishlist(readStorage<WishlistItem[]>(WISHLIST_KEY, []));
