@@ -60,10 +60,10 @@ export function ProductCard({ product, priority = false, compact = false }: Prod
           onClick={() => toggleWishlist(product)}
           aria-label={saved ? `Remove ${product.name} from wishlist` : `Save ${product.name} to wishlist`}
           aria-pressed={saved}
-          className={`absolute top-2 right-2 z-20 flex size-8 items-center justify-center rounded-full border backdrop-blur-sm transition ${
+          className={`absolute top-2 right-2 z-20 flex size-8 items-center justify-center rounded-full border backdrop-blur-sm transition-colors duration-200 ${
             saved
               ? "border-pink bg-pink text-white"
-              : "border-ink/10 bg-white/85 text-ink hover:border-pink hover:bg-pink hover:text-white"
+              : "border-ink/15 bg-white text-ink hover:border-pink hover:bg-pink hover:text-white focus-visible:border-pink focus-visible:bg-pink focus-visible:text-white"
           }`}
         >
           <HeartIcon size={14} filled={saved} />
