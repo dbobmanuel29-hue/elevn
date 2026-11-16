@@ -294,6 +294,23 @@ export default async function ShopPage({ searchParams }: { searchParams: Promise
           ))}
         </div>
       </section>
+
+      <section className="bg-mist py-12 md:py-16">
+        <div className="shell">
+          <p className="eyebrow text-ink/45">The details matter</p>
+          <div className="mt-3 grid gap-6 md:grid-cols-[1fr_1fr] md:items-end">
+            <div>
+              <h2 className="display text-[clamp(2rem,4.5vw,3.4rem)]">Shop with a little more confidence<span className="text-lime">.</span></h2>
+              <p className="mt-3 max-w-lg text-sm leading-relaxed text-ink/60">Explore the fit guide, read community feedback and get clear answers before choosing your next piece.</p>
+            </div>
+            <div className="flex flex-wrap gap-2 md:justify-end">
+              <Link href="/size-guide" className="btn btn-outline">Size guide</Link>
+              <Link href="/reviews" className="btn btn-outline">Customer reviews</Link>
+              <Link href="/faq" className="btn btn-ink">Shopping FAQs</Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
