@@ -59,7 +59,7 @@ const FAQS = [
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-lime pb-12 md:pb-16">
+      <section className="bg-paper pb-12 md:pb-16">
         <div className="shell pt-8 md:pt-10">
           <nav
             aria-label="Breadcrumb"
@@ -192,7 +192,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-      <section className="bg-lime py-12 md:py-16" aria-labelledby="message-guide-heading">
+      <section className="bg-paper py-12 md:py-16" aria-labelledby="message-guide-heading">
         <div className="shell">
           <Reveal className="max-w-xl">
             <p className="eyebrow text-ink/55">A little detail goes a long way</p>
