@@ -41,14 +41,14 @@ export function ShopTheLook({ looks }: { looks: Look[] }) {
             key={look.id}
             className="grid overflow-hidden rounded-2xl border border-ink/12 bg-lime sm:grid-cols-[0.92fr_1.08fr]"
           >
-            <div className="relative aspect-4/5 sm:aspect-auto sm:min-h-[480px]">
+            <div className="relative isolate aspect-[4/5] h-auto w-full self-start overflow-hidden bg-lime sm:aspect-[4/5]">
               <Image
                 src={look.image}
                 alt={`${look.title} — ELEVN ${index === 0 ? "menswear" : "womenswear"} look`}
                 fill
                 priority={index === 0}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 46vw, 24vw"
-                className="object-cover"
+                className="pointer-events-none object-cover transition-opacity duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
               />
               {look.products.map((product) => (
                 <Image
