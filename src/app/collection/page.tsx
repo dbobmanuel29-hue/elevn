@@ -56,7 +56,7 @@ const MATERIALS = [
 export default function CollectionPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-lime pb-12 md:pb-16">
+      <section className="relative overflow-hidden bg-paper pb-12 md:pb-16">
         <div className="shell relative pt-8 md:pt-10">
           <nav
             aria-label="Breadcrumb"
@@ -187,7 +187,7 @@ export default function CollectionPage() {
                   unoptimized
                       className="object-cover"
                     />
-                    <span className="absolute top-3 left-3 rounded-full bg-lime px-2.5 py-1 text-[9px] font-bold tracking-[0.16em] uppercase">
+                    <span className="absolute top-3 left-3 rounded-full bg-paper px-2.5 py-1 text-[9px] font-bold tracking-[0.16em] uppercase">
                       {movement.number}
                     </span>
                   </figure>
@@ -213,7 +213,7 @@ export default function CollectionPage() {
         </div>
       </section>
 
-      <section className="bg-lime py-12 md:py-16" aria-labelledby="materials-heading">
+      <section className="bg-paper py-12 md:py-16" aria-labelledby="materials-heading">
         <div className="shell grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <Reveal>
             <p className="eyebrow text-ink/55">Made to last</p>
@@ -345,7 +345,7 @@ export default function CollectionPage() {
         </div>
       </section>
 
-      <section className="bg-lime pb-14">
+      <section className="bg-paper pb-14">
         <div className="shell">
           <div className="flex flex-col items-center gap-4 rounded-2xl border-2 border-ink bg-paper px-6 py-10 text-center">
             <h2 className="display text-[clamp(1.8rem,4vw,3rem)]">Find your piece</h2>
