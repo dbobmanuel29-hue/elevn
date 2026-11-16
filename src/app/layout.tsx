@@ -55,9 +55,11 @@ export const metadata: Metadata = {
       "Minimal fashion designed for everyday confidence. Premium fabrics, considered cuts, made to be lived in.",
     type: "website",
     siteName: "ELEVN",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "ELEVN — Create a Fashion Vibe" }],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/opengraph-image"],
     title: "ELEVN — Create a Fashion Vibe",
     description: "Minimal fashion designed for everyday confidence.",
   },
