@@ -144,16 +144,16 @@ export function Header() {
 
   return (
     <>
-      <div className="bg-ink text-lime">
+      <div className="bg-ink text-white">
         <div className="shell flex h-9 items-center justify-between gap-4 overflow-hidden text-[10px] font-medium tracking-[0.2em] uppercase">
           <p className="flex items-center gap-2">
-            <SparkIcon size={12} className="text-pink" />
+            <SparkIcon size={12} className="text-lime" />
             <span className="hidden sm:inline">SS26 Drop 01 — Now live</span>
             <span className="sm:hidden">SS26 / Drop 01</span>
           </p>
           <p className="hidden md:block">Free delivery over ₦150,000</p>
           <p className="hidden lg:block">Lagos · London · Accra</p>
-          <Link href="/shop" className="link-underline shrink-0 text-pink">
+          <Link href="/shop" className="link-underline shrink-0 text-lime">
             Shop now
           </Link>
         </div>
@@ -162,8 +162,8 @@ export function Header() {
       <header
         className={`sticky top-0 z-50 border-b transition-all duration-300 ${
           scrolled
-            ? "border-ink/15 bg-lime/90 shadow-[0_10px_30px_-26px_rgba(17,17,17,0.8)] backdrop-blur-md"
-            : "border-transparent bg-lime"
+            ? "border-ink/10 bg-paper/95 shadow-[0_8px_24px_-22px_rgba(17,17,17,0.45)] backdrop-blur-md"
+            : "border-ink/10 bg-paper"
         }`}
       >
         <div className="shell flex h-16 items-center justify-between gap-3 md:h-20">
