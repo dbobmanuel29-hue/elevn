@@ -8,7 +8,7 @@ export function HeroModelSwap() {
 
   return (
     <div
-      className="relative isolate h-[470px] w-full max-w-[560px] overflow-hidden bg-transparent sm:h-[590px] lg:h-[680px]"
+      className="relative isolate h-[470px] w-full max-w-[560px] overflow-visible bg-transparent sm:h-[590px] lg:h-[680px]"
       onMouseEnter={() => setShowSecond(true)}
       onMouseLeave={() => setShowSecond(false)}
       onFocus={() => setShowSecond(true)}
@@ -26,20 +26,20 @@ export function HeroModelSwap() {
       aria-pressed={showSecond}
     >
       <Image
-        src="/images/elevn-hero-men.png"
+        src="/images/ChatGPT%20Image%20Nov%2016,%202026,%2005_06_18%20PM.png"
         alt="ELEVN menswear model wearing a cream jacket and white outfit"
         fill
         priority
         sizes="(max-width: 640px) 88vw, (max-width: 1024px) 72vw, 560px"
-        className={`object-contain object-bottom transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${showSecond ? "scale-[0.985] opacity-0" : "scale-100 opacity-100"}`}
+        className={`object-contain object-bottom bg-transparent transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${showSecond ? "scale-[0.985] opacity-0" : "scale-100 opacity-100"}`}
       />
       <Image
-        src="/images/elevn-hero-women.png"
+        src="/images/ChatGPT%20Image%20Nov%2016,%202026,%2005_06_31%20PM.png"
         alt="ELEVN womenswear model wearing a red varsity jacket and relaxed denim"
         fill
         priority
         sizes="(max-width: 640px) 88vw, (max-width: 1024px) 72vw, 560px"
-        className={`object-contain object-bottom transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${showSecond ? "scale-100 opacity-100" : "scale-[0.985] opacity-0"}`}
+        className={`object-contain object-bottom bg-transparent transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${showSecond ? "scale-100 opacity-100" : "scale-[0.985] opacity-0"}`}
       />
       <span className="sr-only" aria-live="polite">
         {showSecond ? "Womenswear look" : "Menswear look"}
