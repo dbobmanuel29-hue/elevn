@@ -43,18 +43,23 @@ export function ShopTheLook({ looks }: { looks: Look[] }) {
           >
             <div className="relative aspect-4/5 sm:aspect-auto sm:min-h-[480px]">
               <Image
-                key={activeProduct?.slug ?? look.image}
-                src={activeProduct?.image ?? look.image}
-                alt={
-                  activeProduct
-                    ? `${activeProduct.name} — selected piece in the ${look.title} look`
-                    : `${look.title} — ELEVN ${index === 0 ? "menswear" : "womenswear"} look`
-                }
+                src={look.image}
+                alt={`${look.title} — ELEVN ${index === 0 ? "menswear" : "womenswear"} look`}
                 fill
                 priority={index === 0}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 46vw, 24vw"
-                className="object-cover transition-opacity duration-300"
+                className="object-cover"
               />
+              {look.products.map((product) => (
+                <Image
+                  key={product.slug}
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 46vw, 24vw"
+                  className={`object-cover transition-opacity duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${activeProduct?.slug === product.slug ? "opacity-100" : "opacity-0"}`}
+                />
+              ))}
               <span className="absolute top-3 left-3 rounded-full bg-ink px-2.5 py-1 text-[9px] font-bold tracking-[0.16em] text-lime uppercase">
                 {index === 0 ? "Menswear" : "Womenswear"}
               </span>
@@ -102,9 +107,9 @@ export function ShopTheLook({ looks }: { looks: Look[] }) {
                     aria-pressed={active}
                     title={`Preview ${product.name} · ${formatNaira(product.price)}`}
                     style={{ left: `${spot.x}%`, top: `${spot.y}%` }}
-                    className="group absolute z-10 flex -translate-x-1/2 -translate-y-1/2 items-center"
+                    className="group absolute z-10 flex -translate-x-1/2 -translate-y-1/2 items-center touch-manipulation"
                   >
-                    <span className={`flex size-7 items-center justify-center rounded-full border-2 border-white text-white shadow-lg transition duration-200 group-hover:scale-125 group-hover:bg-ink group-focus-visible:bg-ink ${active ? "scale-125 bg-ink" : "animate-pulse-dot bg-pink"}`}>
+                    <span className={`flex size-7 items-center justify-center rounded-full border-2 border-white text-white shadow-lg transition duration-500 ease-out group-hover:scale-125 group-hover:bg-ink group-focus-visible:bg-ink ${active ? "scale-125 bg-ink" : "animate-pulse-dot bg-pink"}`}>
                       <PlusIcon size={12} />
                     </span>
                     <span className="pointer-events-none ml-2 hidden max-w-[150px] translate-x-1 truncate rounded-full bg-ink px-2.5 py-1 text-[9px] font-bold tracking-[0.1em] text-lime uppercase opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100 sm:block">
