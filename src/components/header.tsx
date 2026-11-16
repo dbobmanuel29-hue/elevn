@@ -216,7 +216,7 @@ export function Header() {
             <Link
               href="/account"
               aria-label="Sign in or view your account"
-              className="hidden size-10 items-center justify-center rounded-full transition hover:bg-ink hover:text-lime sm:flex"
+              className="flex size-10 items-center justify-center rounded-full transition hover:bg-ink hover:text-lime"
             >
               <UserIcon size={19} />
             </Link>
