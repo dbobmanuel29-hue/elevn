@@ -71,6 +71,8 @@ export default async function HomePage() {
   const bestSellers = [...featured, ...all.filter((product) => !product.featured)].slice(0, 8);
   const spotlight = bySlug.get(SPOTLIGHT_SLUG) ?? featured[0] ?? all[0] ?? null;
   const heroPick = bySlug.get(HERO_PICK_SLUG) ?? featured[0] ?? null;
+  const heroMenProduct = all.find((product) => product.category === "men") ?? heroPick;
+  const heroWomenProduct = all.find((product) => product.category === "women") ?? null;
   const looks: Look[] = LOOKS.map((look) => ({
     id: look.id,
     title: look.title,
@@ -153,33 +155,8 @@ export default async function HomePage() {
 
             <div className="relative flex items-end justify-center lg:min-h-[680px]">
               <div className="relative mx-auto flex w-full max-w-[560px] items-end justify-center">
-                <HeroModelSwap />
-                {heroPick ? (
-                  <Link
-                    href={`/shop/${heroPick.slug}`}
-                    className="group absolute bottom-5 left-0 flex w-[236px] items-center gap-3 rounded-xl border border-ink/10 bg-paper p-2.5 shadow-[0_18px_40px_-24px_rgba(17,17,17,0.7)] transition hover:-translate-y-1 hover:border-ink sm:bottom-8 sm:left-2"
-                  >
-                    <Image
-                      src={heroPick.image}
-                      alt={heroPick.name}
-                      width={120}
-                      height={150}
-                      sizes="64px"
-                      className="size-16 rounded-lg object-cover"
-                    />
-                    <div className="min-w-0">
-                      <p className="text-[8.5px] font-semibold tracking-[0.16em] text-pink uppercase">
-                        Most wanted
-                      </p>
-                      <p className="mt-0.5 truncate text-[11px] font-bold uppercase">{heroPick.name}</p>
-                      <p className="mt-0.5 text-[11px] text-ink/60">{formatNaira(heroPick.price)}</p>
-                    </div>
-                    <ArrowUpRightIcon
-                      size={14}
-                      className="ml-auto shrink-0 transition group-hover:text-pink"
-                    />
-                  </Link>
-                ) : null}
+                <HeroModelSwap menProduct={heroMenProduct} womenProduct={heroWomenProduct} />
+
               </div>
             </div>
           </div>
