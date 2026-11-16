@@ -1,15 +1,19 @@
 "use client";
 
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
 export const alt = "ELEVN — Create a Fashion Vibe. Minimal fashion for everyday confidence.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+export const runtime = "nodejs";
 
-export default function OpenGraphImage() {
-  const origin = process.env.NEXT_PUBLIC_SITE_URL || "https://elevn.vercel.app";
-  const male = origin + "/images/ChatGPT%20Image%20Nov%2016,%202026,%2005_06_18%20PM.png";
-  const female = origin + "/images/ChatGPT%20Image%20Nov%2016,%202026,%2005_06_31%20PM.png";
+export default async function OpenGraphImage() {
+  const maleBytes = await readFile(join(process.cwd(), "public/images/ChatGPT Image Nov 16, 2026, 05_06_18 PM.png"));
+  const femaleBytes = await readFile(join(process.cwd(), "public/images/ChatGPT Image Nov 16, 2026, 05_06_31 PM.png"));
+  const male = "data:image/png;base64," + maleBytes.toString("base64");
+  const female = "data:image/png;base64," + femaleBytes.toString("base64");
 
   return new ImageResponse(
     (
