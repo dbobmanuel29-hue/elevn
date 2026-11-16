@@ -157,6 +157,17 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 {product.description}
               </p>
 
+              <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-ink/10 bg-white/70 px-4 py-3">
+                <div>
+                  <p className="text-[10px] font-bold tracking-[0.14em] uppercase text-ink/45">Availability</p>
+                  <p className="mt-1 text-sm font-semibold">{product.stock <= 0 ? "Currently unavailable" : product.stock <= 5 ? `Only ${product.stock} left in demo catalogue` : "Available in the demo catalogue"}</p>
+                </div>
+                <span className={`size-2 rounded-full ${product.stock <= 0 ? "bg-pink" : product.stock <= 5 ? "bg-amber-500" : "bg-lime"}`} />
+              </div>
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+                <Link href="/size-guide" className="text-[11px] font-bold tracking-[0.12em] uppercase underline decoration-lime underline-offset-4 hover:text-pink">View size guide</Link>
+                <Link href="/reviews" className="text-[11px] font-bold tracking-[0.12em] uppercase underline decoration-lime underline-offset-4 hover:text-pink">Read community reviews</Link>
+              </div>
               <ProductDetailActions product={product} />
 
               <div className="mt-6 divide-y divide-ink/12 border-y border-ink/12">
