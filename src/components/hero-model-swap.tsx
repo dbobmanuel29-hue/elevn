@@ -20,7 +20,7 @@ export function HeroModelSwap() {
       aria-pressed={showSecond}
     >
       <Image
-        src="/images/elevn-hero-men.webp"
+        src="/images/elevn-hero.webp"
         alt="Menswear model wearing a cream jacket and white outfit"
         fill
         priority
@@ -28,7 +28,7 @@ export function HeroModelSwap() {
         className={`object-contain object-bottom transition-opacity duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${showSecond ? "opacity-0" : "opacity-100"}`}
       />
       <Image
-        src="/images/elevn-hero-women.webp"
+        src="/images/elevn-hero.webp"
         alt="Womenswear model wearing a red varsity jacket and relaxed denim"
         fill
         priority
