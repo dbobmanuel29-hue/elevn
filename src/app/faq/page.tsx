@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = { title: "FAQs", description: "Answers about ELEVN sizing, shopping, delivery, returns and demo checkout." };
+export const metadata: Metadata = { title: "FAQs", description: "Answers about ELEVN sizing, shopping, delivery, returns and checkout." };
 
 const groups = [
-  { title: "Shopping & fit", items: [["How do I choose a size?","Use our size guide and read the fit notes on each product page. If you are between sizes, contact the studio before ordering."],["Can I change an order?","In this demo storefront, orders are not submitted to a fulfilment team. A live store will provide order-change support once backend services are connected."],["Are all products always available?","Availability indicators reflect the catalogue data shown on the website. They are demonstration information, not a live warehouse count."]] },
-  { title: "Delivery & collection", items: [["Can I choose home delivery or pickup?","The checkout demonstration offers home delivery and pickup options with separate sample fees. The pickup location and delivery operations are not yet live."],["Can I track my order?","The tracking experience is a browser-based demonstration. It does not connect to a courier or provide real shipment updates."]] },
-  { title: "Payments & accounts", items: [["Does checkout charge my card?","No. Payment is simulated for demonstration only. No money is collected and no payment provider is contacted."],["Is Google sign-in connected?","No. The Google sign-in control is a demo until real authentication is configured."],["Is my account stored securely online?","Not yet. Demo account data is stored locally in your browser. Do not use a real password."]] },
+  { title: "Shopping & fit", items: [["How do I choose a size?","Use our size guide and read the fit notes on each product page. If you are between sizes, contact the studio before ordering."],["Can I change an order?","Online order processing is not yet available. Contact the studio for launch updates."],["Are all products always available?","Availability reflects the published catalogue and may not represent live warehouse stock."]] },
+  { title: "Delivery & collection", items: [["Can I choose home delivery or pickup?","Delivery options and fees will be confirmed when fulfilment is available. Pickup collection is not yet available."],["Can I track my order?","Courier tracking will become available when live fulfilment is connected."]] },
+  { title: "Payments & accounts", items: [["Does checkout charge my card?","Online payments are not yet available. No money is collected through this website."],["Is Google sign-in connected?","Google sign-in is not yet available."],["Is my account stored securely online?","Secure online customer accounts are not yet available."]] },
 ];
 
 export default function FAQPage() {
