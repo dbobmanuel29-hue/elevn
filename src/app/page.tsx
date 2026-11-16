@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { DropCountdown } from "@/components/drop-countdown";
+import { HeroModelSwap } from "@/components/hero-model-swap";
 import {
   ArrowRightIcon,
   ArrowUpRightIcon,
@@ -152,15 +153,7 @@ export default async function HomePage() {
 
             <div className="relative flex items-end justify-center lg:min-h-[680px]">
               <div className="relative mx-auto flex w-full max-w-[560px] items-end justify-center">
-                <Image
-                  src="/images/elevn-hero.webp"
-                  alt="Model wearing a red ELEVN streetwear look, red cap and distressed wide-leg jeans"
-                  width={270}
-                  height={472}
-                  priority
-                  sizes="(max-width: 1024px) 82vw, 38vw"
-                  className="h-[470px] w-auto max-w-full object-contain object-bottom sm:h-[590px] lg:h-[680px]"
-                />
+                <HeroModelSwap />
                 {heroPick ? (
                   <Link
                     href={`/shop/${heroPick.slug}`}
