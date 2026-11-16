@@ -123,7 +123,7 @@ export default async function ShopPage({ searchParams }: { searchParams: Promise
   return (
     <>
       {/* --------------------------------------------------------------- HERO */}
-      <section className="grain overflow-hidden border-b border-ink/10 bg-lime">
+      <section className="grain overflow-hidden border-b border-ink/10 bg-paper">
         <div className="shell relative pt-8 pb-8 md:pt-10 md:pb-12">
           <nav
             aria-label="Breadcrumb"
@@ -251,7 +251,7 @@ export default async function ShopPage({ searchParams }: { searchParams: Promise
                         className="object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
                       />
                       <span className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />
-                      <span className="absolute top-2 left-2 rounded-full bg-lime px-1.5 py-0.5 text-[8px] font-bold tracking-[0.14em] text-ink uppercase">
+                      <span className="absolute top-2 left-2 rounded-full bg-paper px-1.5 py-0.5 text-[8px] font-bold tracking-[0.14em] text-ink uppercase">
                         {facets.categoryCounts[item.slug] ?? 0}
                       </span>
                       {active ? (
@@ -281,7 +281,7 @@ export default async function ShopPage({ searchParams }: { searchParams: Promise
       <RecentlyViewed />
 
       {/* ------------------------------------------------------------ SERVICE */}
-      <section className="border-t border-ink/10 bg-lime py-10 md:py-12">
+      <section className="border-t border-ink/10 bg-paper py-10 md:py-12">
         <div className="shell grid gap-3 md:grid-cols-3">
           {SERVICE_STRIP.map((item) => (
             <div key={item.number} className="flex gap-4 rounded-xl border border-ink/15 p-4 md:p-5">
