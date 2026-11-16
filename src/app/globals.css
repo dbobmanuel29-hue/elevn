@@ -536,3 +536,23 @@
     line-height: 0.94;
   }
 }
+
+
+/* Wishlist controls stay legible and use the brand pink on hover/focus. */
+@layer components {
+  .wishlist-control {
+    color: var(--color-ink);
+    transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
+  }
+  .wishlist-control:hover,
+  .wishlist-control:focus-visible {
+    color: #fff;
+    background-color: var(--color-pink);
+    border-color: var(--color-pink);
+  }
+  .wishlist-control[aria-pressed="true"] {
+    color: #fff;
+    background-color: var(--color-pink);
+    border-color: var(--color-pink);
+  }
+}
