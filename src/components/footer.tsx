@@ -27,6 +27,9 @@ const COMPANY_LINKS = [
   { href: "/account", label: "Account" },
   { href: "/wishlist", label: "Wishlist" },
   { href: "/track-order", label: "Track an order" },
+  { href: "/size-guide", label: "Size guide" },
+  { href: "/reviews", label: "Customer reviews" },
+  { href: "/faq", label: "FAQs" },
 ];
 
 const SOCIALS = [
