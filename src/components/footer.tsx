@@ -137,10 +137,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 border-t border-white/10 pt-8 md:mt-16">
+        <div className="mt-12 border-t border-white/10 pt-7 md:mt-14">
           <p
             aria-hidden="true"
-            className="display outline-lime text-[clamp(4.25rem,18vw,16rem)] leading-[0.82] tracking-[-0.06em] select-none"
+            className="display outline-lime text-[clamp(3.5rem,14vw,12rem)] leading-[0.9] tracking-[-0.06em] select-none"
           >
             ELEVN
           </p>
@@ -149,7 +149,7 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="mt-10 rounded-2xl border border-white/12 bg-white/[0.03] px-4 py-3 text-[11px] leading-relaxed text-white/45 md:mt-12">
+        <div className="mt-8 rounded-xl border border-white/10 bg-white/[0.025] px-4 py-3 text-[11px] leading-relaxed text-white/45 md:mt-10">
           Demo storefront: cart, wishlist and demo order/tracking records are stored in this browser. No
           payment is processed and no real order is created or dispatched. Newsletter signups are saved to the store
           database.
