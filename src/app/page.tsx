@@ -21,7 +21,7 @@ import { Reveal } from "@/components/reveal";
 import { SectionHeader } from "@/components/section-header";
 import { ShopTheLook, type Look } from "@/components/shop-the-look";
 import { SpotlightActions } from "@/components/spotlight-actions";
-import { categories, editorial, HERO_IMAGE, PROMO_IMAGE, type Product } from "@/data/catalog";
+import { categories, editorial, PROMO_IMAGE, type Product } from "@/data/catalog";
 import {
   COMMUNITY,
   CRAFT,
@@ -150,35 +150,21 @@ export default async function HomePage() {
               </dl>
             </div>
 
-            <div className="relative">
-              <div className="relative mx-auto w-full max-w-[560px]">
-                 
-                <div className="relative overflow-hidden rounded-[1.75rem] rounded-tr-[6rem] border border-ink/10 bg-mist shadow-[0_18px_48px_-34px_rgba(17,17,17,0.32)]">
-                  <Image
-                    src={HERO_IMAGE}
-                    alt="ELEVN model wearing a tailored white suit from the SS26 collection"
-                    width={1100}
-                    height={1400}
-                    priority
-                    sizes="(max-width: 1024px) 92vw, 46vw"
-                    className="h-[400px] w-full object-cover object-[center_22%] sm:h-[520px] lg:h-[640px] xl:h-[680px]"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent p-4">
-                    <p className="text-[10px] font-semibold tracking-[0.22em] text-white/85 uppercase">
-                      The SS26 Editorial
-                    </p>
-                    <span className="rounded-full bg-paper px-2.5 py-1 text-[9px] font-bold tracking-[0.16em] text-ink uppercase">
-                      In studio
-                    </span>
-                  </div>
-                </div>
-
-                 
-
+            <div className="relative flex items-end justify-center lg:min-h-[680px]">
+              <div className="relative mx-auto flex w-full max-w-[560px] items-end justify-center">
+                <Image
+                  src="/images/elevn-hero.png"
+                  alt="Model wearing a red ELEVN streetwear look, red cap and distressed wide-leg jeans"
+                  width={378}
+                  height={661}
+                  priority
+                  sizes="(max-width: 1024px) 82vw, 38vw"
+                  className="h-[470px] w-auto max-w-full object-contain object-bottom sm:h-[590px] lg:h-[680px]"
+                />
                 {heroPick ? (
                   <Link
                     href={`/shop/${heroPick.slug}`}
-                    className="group absolute -bottom-6 left-2 flex w-[236px] items-center gap-3 rounded-xl border border-ink/10 bg-paper p-2.5 shadow-[0_18px_40px_-24px_rgba(17,17,17,0.7)] transition hover:-translate-y-1 hover:border-ink sm:left-6"
+                    className="group absolute bottom-5 left-0 flex w-[236px] items-center gap-3 rounded-xl border border-ink/10 bg-paper p-2.5 shadow-[0_18px_40px_-24px_rgba(17,17,17,0.7)] transition hover:-translate-y-1 hover:border-ink sm:bottom-8 sm:left-2"
                   >
                     <Image
                       src={heroPick.image}
