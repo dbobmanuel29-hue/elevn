@@ -556,3 +556,45 @@
     border-color: var(--color-pink);
   }
 }
+
+
+/* Smooth, restrained motion across touch and pointer devices. */
+@layer base {
+  html {
+    scroll-padding-top: 5rem;
+  }
+
+  img {
+    backface-visibility: hidden;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    a,
+    button {
+      transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .reveal {
+    transform: translateY(14px);
+    transition-duration: 0.55s;
+  }
+
+  .marquee-track {
+    animation-duration: 56s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
