@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 export const metadata: Metadata = { title:"Security", description:"Security information and safe-use guidance for ELEVN customers." };
 const SECTIONS=[
-["1. Payment safety","ELEVN checkout is a simulation. It does not ask for or process real card numbers, CVV codes, bank passwords, one-time passwords or transfer receipts. Never send money or share payment credentials because of a demo checkout screen."],
+["1. Payment safety","Online payments are not yet available. The website does not request or process card numbers, CVV codes, bank passwords, one-time passwords or transfer receipts. Never send money or share payment credentials through an unofficial request."],
 ["2. Protect your information","Use a current browser and keep your device updated. Do not reuse passwords, share account credentials or submit sensitive personal information through general contact forms. Be cautious of messages or websites pretending to represent ELEVN."],
 ["3. Website providers","The storefront uses hosted web and database infrastructure and requests some assets from third-party providers. Those providers operate under their own security practices and terms. No online service can guarantee complete security."],
 ["4. Report a concern","If you notice a suspected security issue, use the Contact page and describe the affected page and steps to reproduce it. Do not include passwords, private keys, payment details or other people's personal data. Do not attempt to access data or accounts that are not yours."],
