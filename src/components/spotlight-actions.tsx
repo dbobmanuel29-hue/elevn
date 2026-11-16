@@ -26,7 +26,7 @@ export function SpotlightActions({ product }: { product: Product }) {
         type="button"
         onClick={() => toggleWishlist(product)}
         aria-pressed={saved}
-        className={`btn btn-lg ${saved ? "border-pink bg-pink text-white" : "btn-outline"}`}
+        className={`btn btn-lg ${saved ? "border-pink bg-pink text-white" : "btn-outline hover:border-pink hover:bg-pink hover:text-white"}`}
       >
         <HeartIcon size={16} filled={saved} /> {saved ? "Saved" : "Save"}
       </button>
