@@ -84,7 +84,7 @@ export default async function HomePage() {
   return (
     <>
       {/* ---------------------------------------------------------------- HERO */}
-      <section className="grain overflow-hidden bg-lime">
+      <section className="grain overflow-hidden bg-paper">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 opacity-[0.16]"
@@ -176,7 +176,7 @@ export default async function HomePage() {
                     <p className="text-[10px] font-semibold tracking-[0.22em] text-white/85 uppercase">
                       The SS26 Editorial
                     </p>
-                    <span className="rounded-full bg-lime px-2.5 py-1 text-[9px] font-bold tracking-[0.16em] text-ink uppercase">
+                    <span className="rounded-full bg-paper px-2.5 py-1 text-[9px] font-bold tracking-[0.16em] text-ink uppercase">
                       In studio
                     </span>
                   </div>
@@ -250,7 +250,7 @@ export default async function HomePage() {
       </section>
 
       {/* --------------------------------------------------------- CATEGORIES */}
-      <section className="bg-lime py-14 md:py-20" aria-labelledby="categories-heading">
+      <section className="bg-paper py-14 md:py-20" aria-labelledby="categories-heading">
         <div className="shell">
           <Reveal>
             <SectionHeader
@@ -278,7 +278,7 @@ export default async function HomePage() {
                     className="object-cover opacity-95 transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.07]"
                   />
                   <span className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/15 to-ink/5 transition-colors duration-500 group-hover:from-ink/90" />
-                  <span className="absolute top-3 left-3 rounded-full bg-lime px-2 py-1 text-[8px] font-bold tracking-[0.18em] text-ink uppercase">
+                  <span className="absolute top-3 left-3 rounded-full bg-paper px-2 py-1 text-[8px] font-bold tracking-[0.18em] text-ink uppercase">
                     0{index + 1}
                   </span>
                   <div className="absolute inset-x-0 bottom-0 p-3.5 text-white sm:p-4">
@@ -341,7 +341,7 @@ export default async function HomePage() {
 
       {/* ---------------------------------------------------------- SPOTLIGHT */}
       {spotlight ? (
-        <section className="border-t border-ink/10 bg-lime py-14 md:py-20" aria-labelledby="spotlight-heading">
+        <section className="border-t border-ink/10 bg-paper py-14 md:py-20" aria-labelledby="spotlight-heading">
           <div className="shell">
             <Reveal className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-16">
               <div className="relative">
@@ -353,7 +353,7 @@ export default async function HomePage() {
                     sizes="(max-width: 1024px) 100vw, 55vw"
                     className="object-cover"
                   />
-                  <span className="absolute top-4 left-4 rounded-full bg-lime px-3 py-1.5 text-[9px] font-bold tracking-[0.18em] text-ink uppercase">
+                  <span className="absolute top-4 left-4 rounded-full bg-paper px-3 py-1.5 text-[9px] font-bold tracking-[0.18em] text-ink uppercase">
                     Piece of the season
                   </span>
                   <span className="absolute right-4 bottom-4 rounded-full bg-ink/85 px-3 py-1.5 text-[9px] font-semibold tracking-[0.16em] text-lime uppercase backdrop-blur-sm">
@@ -416,7 +416,7 @@ export default async function HomePage() {
       ) : null}
 
       {/* ------------------------------------------------------- BEST SELLERS */}
-      <section className="border-t border-ink/10 bg-lime py-14 md:py-20" aria-labelledby="best-sellers-heading">
+      <section className="border-t border-ink/10 bg-paper py-14 md:py-20" aria-labelledby="best-sellers-heading">
         <div className="shell">
           <Reveal>
             <SectionHeader
@@ -435,7 +435,7 @@ export default async function HomePage() {
       </section>
 
       {/* ------------------------------------------------------------- PROMO */}
-      <section className="bg-lime py-4 md:py-6" aria-labelledby="promo-heading">
+      <section className="bg-paper py-4 md:py-6" aria-labelledby="promo-heading">
         <div className="shell">
           <Reveal className="relative overflow-hidden rounded-[1.5rem] bg-ink text-white">
             <div className="grid lg:grid-cols-[1.05fr_1fr]">
@@ -588,7 +588,7 @@ export default async function HomePage() {
       </section>
 
       {/* ---------------------------------------------------------- COUNTDOWN */}
-      <section className="bg-lime py-14 md:py-20" aria-labelledby="drop-heading">
+      <section className="bg-paper py-14 md:py-20" aria-labelledby="drop-heading">
         <div className="shell">
           <Reveal>
             <DropCountdown />
@@ -597,7 +597,7 @@ export default async function HomePage() {
       </section>
 
       {/* -------------------------------------------------------- EDITORIAL */}
-      <section className="border-t border-ink/10 bg-lime py-14 md:py-20" aria-labelledby="editorial-heading">
+      <section className="border-t border-ink/10 bg-paper py-14 md:py-20" aria-labelledby="editorial-heading">
         <div className="shell">
           <Reveal>
             <SectionHeader
@@ -699,7 +699,7 @@ export default async function HomePage() {
       </section>
 
       {/* ---------------------------------------------------------- COMMUNITY */}
-      <section className="bg-lime py-14 md:py-20" aria-labelledby="community-heading">
+      <section className="bg-paper py-14 md:py-20" aria-labelledby="community-heading">
         <div className="shell">
           <Reveal>
             <SectionHeader
@@ -744,7 +744,7 @@ export default async function HomePage() {
       </section>
 
       {/* ----------------------------------------------------------- SERVICES */}
-      <section className="border-t border-ink/10 bg-lime py-14 md:py-20" aria-labelledby="services-heading">
+      <section className="border-t border-ink/10 bg-paper py-14 md:py-20" aria-labelledby="services-heading">
         <div className="shell grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12">
           <Reveal className="relative min-h-[400px] overflow-hidden rounded-[1.5rem] border-2 border-ink bg-ink text-white">
             <Image
@@ -812,7 +812,7 @@ export default async function HomePage() {
       {/* --------------------------------------------------------- NEWSLETTER */}
       <section
         id="newsletter"
-        className="relative scroll-mt-28 overflow-hidden bg-lime pb-16"
+        className="relative scroll-mt-28 overflow-hidden bg-paper pb-16"
         aria-labelledby="newsletter-heading"
       >
         <div className="shell">
