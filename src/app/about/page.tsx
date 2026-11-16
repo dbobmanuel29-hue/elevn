@@ -41,7 +41,7 @@ const TIMELINE = [
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-lime pb-12 md:pb-16">
+      <section className="bg-paper pb-12 md:pb-16">
         <div className="shell pt-8 md:pt-10">
           <nav
             aria-label="Breadcrumb"
@@ -149,7 +149,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-lime py-12 md:py-16" aria-labelledby="timeline-heading">
+      <section className="bg-paper py-12 md:py-16" aria-labelledby="timeline-heading">
         <div className="shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
             <div className="relative aspect-4/3 overflow-hidden rounded-2xl border-2 border-ink">
@@ -267,7 +267,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-lime pb-14">
+      <section className="bg-paper pb-14">
         <div className="shell grid gap-3 sm:grid-cols-2">
           {categories.slice(0, 2).map((category) => (
             <Link
