@@ -87,11 +87,11 @@ export default async function HomePage() {
       <section className="grain overflow-hidden bg-lime">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-[0.35]"
+          className="pointer-events-none absolute inset-0 opacity-[0.16]"
           style={{
             backgroundImage:
               "radial-gradient(circle at 1px 1px, rgba(17,17,17,0.16) 1px, transparent 0)",
-            backgroundSize: "26px 26px",
+            backgroundSize: "32px 32px",
           }}
         />
         <div className="shell relative">
@@ -162,7 +162,7 @@ export default async function HomePage() {
             <div className="relative">
               <div className="relative mx-auto w-full max-w-[560px]">
                 <div className="absolute -top-2 -left-2 hidden size-20 rounded-full border border-ink/20 sm:block" />
-                <div className="relative overflow-hidden rounded-[1.75rem] rounded-tr-[6rem] border-2 border-ink bg-mist shadow-[18px_18px_0_0_rgba(255,51,153,1)] sm:shadow-[22px_22px_0_0_rgba(255,51,153,1)]">
+                <div className="relative overflow-hidden rounded-[1.75rem] rounded-tr-[6rem] border-2 border-ink bg-mist shadow-[12px_12px_0_0_rgba(198,247,53,0.7)] sm:shadow-[16px_16px_0_0_rgba(198,247,53,0.7)]">
                   <Image
                     src={HERO_IMAGE}
                     alt="ELEVN model wearing a tailored white suit from the SS26 collection"
