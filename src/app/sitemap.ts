@@ -5,7 +5,7 @@ import { fallbackProducts } from "@/data/catalog";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://elevn.studio";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/shop", "/collection", "/about", "/contact", "/cart", "/wishlist", "/privacy", "/terms", "/shipping-returns", "/cookies", "/security", "/track-order", "/account"];
+  const staticRoutes = ["", "/shop", "/collection", "/about", "/contact", "/cart", "/wishlist", "/privacy", "/terms", "/shipping-returns", "/cookies", "/security", "/track-order", "/account", "/size-guide", "/reviews", "/faq"];
 
   return [
     ...staticRoutes.map((route) => ({
