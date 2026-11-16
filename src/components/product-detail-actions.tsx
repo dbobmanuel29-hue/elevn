@@ -37,7 +37,7 @@ export function ProductDetailActions({ product }: { product: Product }) {
             className={`min-w-[52px] rounded-full border-[1.5px] px-3.5 py-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase transition ${
               size === option
                 ? "border-ink bg-ink text-lime"
-                : "border-ink/20 text-ink hover:border-pink hover:text-pink"
+                : "border-ink/20 text-ink hover:border-pink hover:bg-pink hover:text-white"
             }`}
           >
             {option}
