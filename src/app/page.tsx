@@ -57,7 +57,7 @@ const MARQUEE_ITEMS = [
 const VALUE_PROPS = [
   { Icon: TruckIcon, title: "Nationwide delivery", copy: "Lagos in 24h, Nigeria in 2–4 days." },
   { Icon: ReturnIcon, title: "14-day returns", copy: "Changed your mind? No stress." },
-  { Icon: ShieldIcon, title: "Demo checkout", copy: "Try simulated card or bank transfer payments." },
+  { Icon: ShieldIcon, title: "Secure checkout", copy: "Online payments will be available soon." },
   { Icon: SparkIcon, title: "Limited runs", copy: "Small batches. No mass repeats." },
 ];
 
